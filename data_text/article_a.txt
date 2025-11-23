@@ -1,0 +1,138 @@
+TÀI LIỆU ĐẶC TẢ YÊU CẦU PHẦN MỀM (Software Requirement Specification – SRS)
+Hệ thống quán Cà Phê
+Phiên bản 1.0
+Đơn vị thực hiện: G2_CNPM
+Người thực hiện: Lương Danh Thiện, Phan Long Chức, Phạm Xuân Bắc
+Đà Nẵng, tháng 5, năm 2025
+
+Mục lục
+Danh mục hình ảnh, bảng biểu
+
+1. Giới thiệu
+   1.1 Mục đích
+   Mục đích của tài liệu đặc tả yêu cầu phần mềm này là cung cấp cái nhìn tổng quan, dễ hiểu về các yêu cầu, thành phần, chức năng của dự án. Tài liệu này là tham khảo cho sinh viên trực tiếp phát triển dự án cũng như nhà phát triển, kiểm thử viên, quản lý dự án.
+
+1.2 Phạm vi
+Tài liệu được xây dựng phục vụ dự án hệ thống quán cà phê, giúp quản lý bán hàng, thanh toán, theo dõi kinh doanh chính xác, giảm sai sót. Hệ thống giúp nhân viên thao tác dễ dàng và tăng hiệu quả vận hành.
+
+1.3 Từ điển thuật ngữ
+Software Requirements Specifications – SRS: Đặc tả yêu cầu phần mềm
+Use Case(s): Biểu đồ mô tả yêu cầu hệ thống
+Database: Cơ sở dữ liệu
+CRUD: Thêm, sửa, xóa dữ liệu
+QTV: Quản trị viên
+
+1.4 Tài liệu tham khảo
+IEEE Std 830-1998.
+IEEE Std 1233-1996.
+
+1.5 Tổng quát
+Tài liệu viết theo chuẩn SRS, gồm 3 phần:
+
+1. Tổng quan các thành phần.
+
+2. Mô tả tổng quan nhân tố, ràng buộc, môi trường, yêu cầu chức năng.
+
+3. Yêu cầu phi chức năng.
+
+4. Các yêu cầu chức năng
+   2.1 Các tác nhân
+   Hệ thống gồm Nhân viên và Quản trị viên.
+
+2.2 Chức năng hệ thống
+
+1. Đăng nhập.
+2. Chọn món, thêm, sửa, xóa món; chọn bàn và xuất hóa đơn.
+3. Quản trị người dùng.
+4. Quản lý thực phẩm.
+5. Quản lý hóa đơn.
+
+2.3 Biểu đồ use case tổng quan
+(Hình 2-1)
+
+2.4 Quy trình nghiệp vụ
+
+2.4.1 Quy trình sử dụng phần mềm
+Nhân viên đăng nhập, chọn món, cập nhật hóa đơn, chọn bàn, xuất hóa đơn. QTV quản lý menu, loại thực phẩm, hóa đơn, tài khoản.
+
+2.4.2 Quy trình quản lý danh sách thực phẩm
+QTV thêm, sửa, xóa sản phẩm hợp lệ.
+
+2.4.3 Quy trình quản lý danh sách loại thực phẩm
+QTV tạo mới, sửa, xóa loại sản phẩm.
+
+2.4.4 Quy trình quản lý hóa đơn
+QTV xem hóa đơn theo bàn/ngày/tháng/năm.
+
+2.4.5 Quy trình quản lý tài khoản
+(Hình 2-8)
+
+2.4.6 Quy trình quản lý tin tức
+(Hình 2-9)
+
+2.4.7 Quy trình quản lý câu hỏi thường gặp
+(Hình 2-10)
+
+2.4.8 Quy trình sử dụng phần mềm của nhân viên
+(Hình 2-11)
+
+2.5 Đặc tả các use case
+
+2.5.1 Đăng nhập (UC001)
+Tác nhân: Khách
+Mô tả: Đăng nhập để sử dụng hệ thống
+Tiền điều kiện: Có tài khoản
+Luồng chính:
+
+1. Khách chọn Đăng nhập.
+2. Hệ thống hiển thị giao diện.
+3. Khách nhập email, mật khẩu.
+4. Khách yêu cầu đăng nhập.
+5. Hệ thống kiểm tra dữ liệu.
+6. Hệ thống kiểm tra email, mật khẩu.
+7. Đăng nhập thành công.
+   Luồng thay thế: Lỗi thiếu trường, sai email/mật khẩu.
+
+Dữ liệu:
+Email – bắt buộc – đúng định dạng.
+Mật khẩu – bắt buộc – tối thiểu 6 ký tự.
+
+2.5.2 Thay đổi mật khẩu (UC002)
+Tác nhân: Học viên, Giảng viên, QTV
+Luồng chính: Chọn đổi mật khẩu → nhập mật khẩu cũ, mới → hệ thống kiểm tra và cập nhật.
+
+2.5.3 Thiết lập lại mật khẩu (UC003)
+Tác nhân: Người dùng
+Luồng chính: Nhập email → hệ thống kiểm tra → gửi liên kết đặt lại mật khẩu.
+
+2.5.4 Đăng ký (UC004)
+Tác nhân: Khách
+Luồng chính: Nhập thông tin → kiểm tra → tạo tài khoản.
+
+Dữ liệu đăng ký:
+Email hợp lệ, mật khẩu ≥ 6 ký tự, xác nhận mật khẩu trùng khớp.
+
+2.5.5 Cập nhật thông tin cá nhân (UC005)
+Tác nhân: Tất cả người dùng
+Luồng chính: Nhập thông tin → kiểm tra → cập nhật.
+
+Dữ liệu:
+Họ tên ≤ 255 ký tự.
+Email đúng định dạng.
+Ngày sinh hợp lệ.
+SĐT là ký tự số.
+Giới tính chọn trong Male/Female/Other.
+Ảnh: png, gif, jpeg, jpg.
+
+2.5.6 Tìm kiếm giảng viên, học viên (UC006)
+Tác nhân: QTV
+Luồng chính: Nhập tiêu chí → hệ thống trả về kết quả.
+
+Dữ liệu tìm kiếm:
+Tên: chuỗi ký tự.
+Email: đúng định dạng.
+Điện thoại: số.
+Giới tính: chọn.
+
+2.5.7 Tìm kiếm tin tức, câu hỏi thường gặp, khóa học...
+(Hoàn thiện tùy theo phần còn lại của tài liệu)

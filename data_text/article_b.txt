@@ -1,0 +1,126 @@
+ĐẠI HỌC BÁCH KHOA
+KHOA CÔNG NGHỆ THÔNG TIN
+
+
+
+
+ 
+
+
+
+
+ĐỒ ÁN CƠ SỞ LẬP TRÌNH
+
+QUẢN LÝ PHÒNG TRỌ
+
+
+
+
+
+                   Người hướng dẫn : TS. Đặng Hoài Phương
+
+                   Sinh viên thực hiện:
+
+LƯƠNG DANH THIỆN	           LỚP: 23T_DT2          NHÓM: 10
+ĐẶNG ĐỨC THẮNG                    LỚP: 23T_DT2          NHÓM: 10
+
+
+Đà Nẵng,12/2024
+ 
+
+
+LỜI MỞ ĐẦU
+
+Trong xã hội hiện nay,kinh doanh nhà trọ trở thành sự lựa chọn của nhiều người.Xu hướng ngày càng tăng dẫn đến việc đặt ra yêu cầu về quản lí phòng trọ.Việc áp dụng công nghệ vào hỗ trợ quản lý trở thành xu hướng hiện nay.Đồ án quản lý phòng trọ được xây dựng nhằm mục tiêu cung cấp cho mọi người giải pháp đơn giản,hiệu quả cho chủ trọ cũng như người dùng.
+Đồ án sử dụng thiết kế ngôn ngữ lập trình C++ ,tận dụng các chứ năng,đặc điểm của việc lập trình hướng đối tượng (OOP) để tổ chức,xử lý dữ liệu một cách chặt chẽ.Dự án nhằm hỗ trợ chủ trọ có thể kiểm soát được số lượng lớn phòng trọ,hoạt động quản lý.Bên cạnh đó người thuê trọ có thể xem được thông tin cá nhân cũng như chi tiêu của bản thân mình trong phòng.
+Sử dụng giao diện thân thiện,dễ sử dụng cùng với một số chức năng chính:
+•	Thêm,xóa thông tin phòng
+•	Tính toán hóa đơn dịch vụ ,tiền phòng
+•	Xem thông tin của các phòng
+•	Cập nhật các thông tin trong phòng
+Đồ án là bước đầu cho việc áp dụng công nghệ vào đời sống hiện nay,cũng như là cơ hội nhằm nâng cao trình độ lập trình về hướng đối tượng .Chúng tôi hi vọng đồ án sẽ giúp đỡ được các chủ phòng trọ và người dùng trong việc quản lý phòng trọ cũng như các nhu cầu thực tiễn.		
+ 
+MỤC LỤC
+
+LỜI MỞ ĐẦU	i
+MỤC LỤC	ii
+1.CƠ SỞ LÝ THUYẾT	1
+1.1 Tổng quan	1
+1.2 Các đối tượng quản lý	1
+2.CẤU TRÚC DỮ LIỆU	2
+2.1 Sử dụng cấu trúc dữ liệu danh sách liên kết đôi	2
+2.2 Cấu trúc mỗi phần tử	2
+3.TỔNG QUAN CHƯƠNG TRÌNH	3
+4.NHỮNG MẶT HẠN CHẾ	4
+5.KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN	5
+5.1 Kết luận	5
+5.2 Hướng phát triển	5
+Tài liệu tham khảo	6
+PHỤ LỤC	7
+
+ 
+1.CƠ SỞ LÝ THUYẾT
+1.1 Tổng quan 
+Quản lý phòng trọ là một bài toán thực tiễn với các yêu cầu về tổ chức và theo dõi quản lý các phòng trọ liên quan đến khách cho thuê ,chi phí dịch vụ.
+Đặc điểm:
+•	Số lượng khách thuê thay đổi thường xuyên
+•	Thông tin dịch vụ thay đổi hàng tháng
+•	Mỗi phòng trọ có thể có từ vài chục đến vài trăm khách thuê
+•	Dữ liệu các dịch vụ phải được lưu trữ và xử lí chính xác
+1.2 Các đối tượng quản lý
+Phòng trọ:
+•	Số phòng,tình trạng thuê
+•	Giá thuê 
+•	Họ tên khách thuê,số điện thoại
+Dịch vụ:
+•	Chỉ số dịch vụ,số tiền phải trả
+•	Trạng thái thanh toán
+1.3 Các chức năng 
+Quản lí thông tin khách thuê:
+•	Thêm/xóa thông tin phòng
+•	Cập nhật thông tin
+Tính toán chi phí dịch vụ
+•	Tiền điện
+•	Tiền nước
+•	Chi phí khác(Tiền wifi,tiền rác….)
+Tìm kiếm và truy xuất thông tin
+•	Tìm kiếm khách thuê dựa vào số phòng
+2.CẤU TRÚC DỮ LIỆU
+2.1 Sử dụng cấu trúc dữ liệu danh sách liên kết đôi
+Trong đồ án,sử dụng danh sách liên kết đôi là một cấu trúc dữ liệu phù hợp cho bài toán quản lý phòng trọ vì nó đáp ứng được các yêu cầu quan trọng sau:
+•	 Cấu trúc danh sách liên kết đôi cho phép thêm hoặc xóa các phần tử mà không cần dịch chuyển các phần tử khác như trong mảng tĩnh. Điều này rất phù hợp khi số lượng khách thuê hoặc giao dịch thanh toán thay đổi thường xuyên.
+•	 Danh sách liên kết đôi có thể duyệt từ đầu đến cuối và ngược lại nhờ vào con trỏ next và prev. Điều này hữu ích trong việc tra cứu thông tin hoặc thực hiện các thống kê như kiểm tra lịch sử thanh toán theo thời gian.
+•	Danh sách liên kết đôi sử dụng bộ nhớ động, chỉ cấp phát khi cần thiết. Điều này tối ưu hóa bộ nhớ và tránh lãng phí không gian so với việc sử dụng mảng tĩnh.
+2.2 Cấu trúc mỗi phần tử
+Cứ mỗi phòng trọ lại được xem là một phần sử nằm trong danh sách liên kết
+•	Chứ các thông tin trong phòng
+•	Con trỏ next
+•	Con trỏ prev
+2.3 Ưu điểm và nhược điểm
+Ưu điểm:
+•	Duyệt hai chiều dễ dàng,phù hợp với các yêu cầu đồ án
+•	Dễ mở rộng,thay đổi,xóa các thông tin trong phần tử
+Nhược điểm:
+•	Chiếm nhiều bộ nhớ vì lưu trữ con trỏ next và prev
+•	Truy cập ngẫu nhiên phức tạp
+ 
+3.TỔNG QUAN CHƯƠNG TRÌNH
+ 
+4.NHỮNG MẶT HẠN CHẾ 
+ 
+5.KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+5.1 Kết luận
+Đồ án quản lý phòng trọ đã giải quyết hiệu quả vấn đề về việc tổ chức,quản lý phòng trọ liên quan đến khách thuê,dịch vụ thanh toán.Đồ án đã đạt được các mục tiêu đề ra cũng như cải tiến,tối ưu được hiệu quả.
+Chúng tôi hi vọng rằng dự án sẽ giúp đỡ cũng như cải thiện thêm cho người chủ trọ giải quyết các nhu cầu hiện nay.Qua đó thể hiện được rõ vai trò quan trọng của cấu trúc dữ liệu cùng với lập trình hướng đối tượng trong việc tối ưu hiệu suất và quản lý dữ liệu một cách logic hơn.
+5.2 Hướng phát triển
+Để đồ án hoàn thiện hơn trong tương lai cần có nhiều bước thay đổi cũng như cải tiến hơn nữa.Qua đó biến nó thành công cụ mạnh mẽ,chuyên nghiệp hơn phù hợp nhu cầu thực tế hơn.
+Một số hướng phát triển trong tương lai:
+•	Tích hợp đồ họa UI:người dùng dễ thao tác hơn
+•	Sử dụng cơ sở dữ liệu nhằm đảm bảo cũng như dễ kiểm soát dữ liệu hơn
+•	Tích hợp thanh toán trực tuyến
+•	Bổ sung thêm một số chức năng khác:gia hạn hợp đồng,đa dạng dịch vụ…
+•	Hỗ trợ trên nhiều nền tảng khác nhau
+ 
+Tài liệu tham khảo
+ 
+PHỤ LỤC
